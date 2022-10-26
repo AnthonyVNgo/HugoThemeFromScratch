@@ -9,6 +9,15 @@ body {
 }
 
 a {
+	color: white; 
 	text-transform: capitalize;
 }
 
+a:visited { 
+	text-decoration: none; 
+	color: white; 
+}
+
+li > a > div {
+	color: black;
+}
