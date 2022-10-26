@@ -1,0 +1,34 @@
+{{ define "main" }}
+<section style="display: flex; justify-content: center; height: 100vh; background-color: white; align-items: center;">
+    <h1>
+        Anthony Ngo is a software engineer based in Los Angeles, California
+    </h1>
+</section>
+
+<section>
+    <h2> this is the blogs section</h2>
+      <iframe width="420" height="315"
+    src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
+    </iframe>
+</section>
+
+<section>
+	<ul>
+		{{ range .Pages.ByPublishDate.Reverse }}
+			<li style="padding: 10px;">  
+				<a href="{{ .RelPermalink }}">
+					<div>
+						Title: {{ .Title }} 	
+					</div>
+					<div>
+						<span class="comment"> Date: {{ .Date.Format "2006-01-02" }}</span>
+					</div>
+				</a>
+			</li>
+		{{ end }}
+	</ul>
+</section>
+
+{{ end }}
+
+

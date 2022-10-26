@@ -1,0 +1,25 @@
+{{ define "main" }}
+<section class="recent-articles" style="height: 50vh; display: flex; justify-content:  center; align-items: center;">
+  <!-- <h1>{{ .Title }}</h1> -->
+	<!-- <h1>
+		{{ .Content }}
+	</h1> -->
+  <ul>
+		{{ range .Pages.ByPublishDate.Reverse }}
+			<li style="padding: 10px;">  
+				<a href="{{ .RelPermalink }}">
+					<div>
+						<!-- {{ .Date.Format "Jun 6, 2018" }} -->
+						<!-- <span class="comment"> Date: {{ .Date.Format "2006-01-02" }}</span> -->
+						{{ .Date.Format "2006-01-02" }}
+						<!-- <span class="comment"> Date: {{ .Date.Format "2006-01-02" }}</span> -->
+					</div>
+					<div>
+						{{ .Title }} 	
+					</div>
+				</a>
+			</li>
+		{{ end }}
+  </ul>
+</section>
+{{ end }}
